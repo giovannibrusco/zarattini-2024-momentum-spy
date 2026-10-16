@@ -3,7 +3,7 @@
 > 🇬🇧 **English version**: [`README.md`](../README.md) — questa è la versione italiana originale, mantenuta come riferimento storico; in caso di divergenza fa fede quella inglese.
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/tests-48%20passing-brightgreen.svg)](../tests/)
+[![Tests](https://img.shields.io/badge/tests-49%20passing-brightgreen.svg)](../tests/)
 [![Dati](https://img.shields.io/badge/dati-SPY%206a%20%2B%20ES%202a-informational.svg)](#-dati)
 [![Fase](https://img.shields.io/badge/fase-replica%20completata-success.svg)](CONCLUSIONS.md)
 
@@ -19,7 +19,7 @@ Replica indipendente e validazione di **Zarattini, Aziz & Barbon (2024)** — *"
 | ✅ **Trade-level in linea** | +2.6 bps/trade, WR 41%, payoff 1.69 | Quantitativo su ES: +2 bps, 36%, 2.1 |
 | ✅ **Cross-validazione** | ES (futures IB) vs SPY (Alpaca): correlazione **0.97** | stessi segnali, due mondi dati |
 | ⚠️ **Edge compresso dal 2025** | Sharpe recente ≈ 0 su *entrambi* gli strumenti | non è il feed, non sono i costi |
-| 🔒 **L'ottimizzazione non salva** | Griglia 27 varianti: vince la config del paper; walk-forward: **distrugge** valore | protocolli ex-ante in [`docs/`]() |
+| 🔒 **L'ottimizzazione non salva** | Griglia 27 varianti: vince la config del paper; walk-forward: **distrugge** valore | protocolli ex-ante in [`docs/`](./) |
 
 > **Giudizio sintetico**: strategia reale nel campione, profilo prezioso (beta 0, rende nelle crisi — 2022: **+25.8%** con SPY a -19.5%), ma edge attualmente compresso. Non allocabile oggi, non liquidabile come morta: verdetto completo in [`docs/CONCLUSIONS.md`](CONCLUSIONS.md).
 
@@ -75,7 +75,7 @@ Riselezione trimestrale della variante migliore su Sharpe trailing 252g: **Sharp
 │   ├── download_ib.py       # ES 1-min: contratti trimestrali + stitching + back-adjust
 │   ├── validate_data.py     # sanity check dati
 │   └── run_{validation,maroy,walkforward}.py   # pipeline riproducibili → reports/
-├── tests/                   # 48 test su dati sintetici (σₜ, gap, flip, exit, stitching…)
+├── tests/                   # 49 test su dati sintetici (σₜ, gap, flip, exit, stitching…)
 ├── reports/                 # risultati: validazione SPY, ES, Maróy, walk-forward
 ├── docs/                    # SPEC, protocolli ex-ante congelati, CONCLUSIONS
 ├── scripts/make_charts.py   # rigenera i grafici del README (temi chiaro/scuro)
@@ -86,7 +86,7 @@ Riselezione trimestrale della variante migliore su Sharpe trailing 252g: **Sharp
 
 ```bash
 pip install -r requirements.txt
-python -m pytest tests/                      # 48 test, dati sintetici (nessun dato esterno)
+python -m pytest tests/                      # 49 test, dati sintetici (nessun dato esterno)
 
 # 1 · Scarica i dati — i file 1-min grezzi NON sono nel repo (ToS IB/CME e Alpaca)
 export ALPACA_API_KEY=... ALPACA_SECRET_KEY=...          # account paper gratuito

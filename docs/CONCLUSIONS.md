@@ -7,9 +7,10 @@
 
 ### 1. The code replicates the paper — primary objective achieved
 
-On SPY 2020-26 with the paper's costs: Sharpe 1.11, annualised alpha
-+16.7% (t 2.85), beta -0.06; the final exit dominates base over the long
-sample; win rate 41% / payoff 1.69 / +2.6 bps per trade, consistent with
+On SPY 2020-26 with the paper's commissions ($0.0035/share; baseline
+slippage 0 vs the paper's $0.001/share, immaterial: Sharpe 1.02 even at
+$0.005/share): Sharpe 1.11, annualised alpha +16.7% (t 2.85), beta
+-0.06; the final exit dominates base over the long sample; win rate 41% / payoff 1.69 / +2.6 bps per trade, consistent with
 the paper (Sharpe 1.33 over 2007-24) and with the Quantitativo replication
 on ES. Strong cross-validation: the same strategy on two independent data
 sources (ES futures from IB with our own stitching; SPY from Alpaca)
@@ -57,8 +58,8 @@ the historical profile admits long pauses.
 
 ## Recommended next steps (in order)
 
-1. **NO to the Apex phase for now.** With a recent Sharpe of ~0, any Monte
-   Carlo on trailing drawdown and the consistency rule would reject the
+1. **NO to the prop-firm phase (Apex Trader Funding evaluation) for
+   now.** With a recent Sharpe of ~0, any Monte Carlo on trailing drawdown and the consistency rule would reject the
    strategy (or worse: it would pass by luck on simulations calibrated on
    the good past). The Apex phase only makes sense if and when the edge
    reappears.
@@ -71,8 +72,7 @@ the historical profile admits long pauses.
    track with the same discipline (spec → protocol → replication →
    validation). It diversifies research risk instead of continuing to dig
    in a space that has already said no.
-4. **(Optional) Long history via Databento** if the card issue is resolved:
-   2007-2019 would say whether the current lean stretch has precedents. It
+4. **(Optional) Long history via Databento**: 2007-2019 would say whether the current lean stretch has precedents. It
    is the only data purchase that would genuinely change the conclusions.
 
 ## What NOT to do

@@ -107,6 +107,15 @@ class TestEntriesAndExits:
         assert res.trades.empty
 
 
+    def test_half_session_no_checks_after_close(self):
+        # early close at 13:00 (last bar 12:59) with a breakout only on the
+        # last bar: the 13:00+ checks must not trade on the stale 12:59 price
+        path = np.full(BARS_PER_DAY, O3)
+        path[209:] = 1.01 * O3
+        bars = stack_days(*_history(), make_day(D[3], O3, path).iloc[:210])
+        res = run_backtest(bars, costs=NO_COSTS, **KW)
+        assert res.trades.empty
+
 class TestExitVariants:
     def test_final_exits_on_reentry_base_holds(self):
         # long from 10:00 at 1.005*O3; at 12:00 the price reverts to 1.001*O3

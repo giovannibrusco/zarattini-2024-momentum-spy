@@ -1,7 +1,7 @@
 # 📈 "Beat the Market" replication — Intraday Momentum on SPY & ES
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/tests-48%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-49%20passing-brightgreen.svg)](tests/)
 [![Data](https://img.shields.io/badge/data-SPY%206y%20%2B%20ES%202y-informational.svg)](#-data)
 [![Status](https://img.shields.io/badge/status-replication%20complete-success.svg)](docs/CONCLUSIONS.md)
 
@@ -83,7 +83,7 @@ Quarterly reselection of the best variant on trailing 252-day Sharpe: **Sharpe 0
 │   ├── download_ib.py       # ES 1-min: quarterly contracts + stitching + back-adjustment
 │   ├── validate_data.py     # data sanity checks
 │   └── run_{validation,maroy,walkforward}.py   # reproducible pipelines → reports/
-├── tests/                   # 48 tests on synthetic data (σₜ, gaps, flips, exits, stitching…)
+├── tests/                   # 49 tests on synthetic data (σₜ, gaps, flips, exits, stitching…)
 ├── reports/                 # results: SPY validation, ES, Maróy, walk-forward
 ├── docs/                    # SPEC, frozen ex-ante protocols, CONCLUSIONS
 ├── scripts/make_charts.py   # regenerates the README charts (light/dark themes)
@@ -94,7 +94,7 @@ Quarterly reselection of the best variant on trailing 252-day Sharpe: **Sharpe 0
 
 ```bash
 pip install -r requirements.txt
-python -m pytest tests/                      # 48 tests, synthetic data (no external data needed)
+python -m pytest tests/                      # 49 tests, synthetic data (no external data needed)
 
 # 1 · Get the data — raw 1-min files are NOT in the repo (IB/CME and Alpaca ToS)
 export ALPACA_API_KEY=... ALPACA_SECRET_KEY=...          # free paper account
